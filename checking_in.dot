@@ -1,39 +1,86 @@
 digraph {
 	//Nodes (Questions)
-	q1[label="Have you used any substances\nin the past 7 days?"]
-	q3[label="What substances have you used\nin the past 7 days?"]
+	q1[label="Have you used any substances\nin the past 7 days? (q1)"]
+	q3[label="What substances have you used\nin the past 7 days? (q3)"]
 
-	q4[label="In the last 7 days,\non how many days\ndid you smoke cigarettes?"]
-	q5[label="How many cigarettes did you\nusually smoke each day?"]
-	q6[label="On those days that you smoked,\nhow many cigarettes did\nyou usually have?"]
-	q7[label="How many cigarettes did\nyou have YESTERDAY?"]
+	q4[label="In the last 7 days,\non how many days\ndid you smoke cigarettes? (q4)"]
+	q5[label="How many cigarettes did you\nusually smoke each day? (q5)"]
+	q6[label="On those days that you smoked,\nhow many cigarettes did\nyou usually have? (q6)"]
+	q7[label="How many cigarettes did\nyou have YESTERDAY? (q7)"]
 
-	q8[label="In the last 7 days,\non how many days\ndid you use an\ne-cigarette (vape)?"]
-	q9[label="On those days that you\nused an e-cigarette (vaped),\nhow many times per\nday did you use it?"]
-	q10[label="Each time you used an\ne-cigarette (vaped), how many\npuffs did you usually take?"]
-	q11[label="Do you know the concentration\nof the liquid you mostly\nused in the last 7 days?"]
-	q12[label="Please select the nicotine\nconcentration of the liquid\nyou usually used in\nthe last 7 days."]
+	q8[label="In the last 7 days,\non how many days\ndid you use an\ne-cigarette (vape)? (q8)"]
+	q9[label="On those days that you\nused an e-cigarette (vaped),\nhow many times per\nday did you use it? (q9)"]
+	q10[label="Each time you used an\ne-cigarette (vaped), how many\npuffs did you usually take? (q10)"]
+	q11[label="Do you know the concentration\nof the liquid you mostly\nused in the last 7 days? (q11)"]
+	q12[label="Please select the nicotine\nconcentration of the liquid\nyou usually used in\nthe last 7 days. (q12)"]
 
-	q13[label="Which of the following\ntobacco products did you\nuse in the past 7 days?\n(Don't count cigarettes or e-cigarettes.)"]
-	q14[label="In the last 7 days,\non how many days\ndid you use one of\nthese other tobacco products?"]
+	q13[label="Which of the following\ntobacco products did you\nuse in the past 7 days?\n(Don't count cigarettes or e-cigarettes.) (q13)"]
+	q14[label="In the last 7 days,\non how many days\ndid you use one of\nthese other tobacco products? (q14)"]
 
-	q15[label="In the last 7 days,\non how many days did\nyou drink any alcohol?"]
-	q16[label="On those days that\nyou drank alcohol,\nhow many drinks did you\nusually have each day?"]
-	q17[label="How many drinks did\nyou have YESTERDAY?"]
+	q15[label="In the last 7 days,\non how many days did\nyou drink any alcohol? (q15)"]
+	q16[label="On those days that\nyou drank alcohol,\nhow many drinks did you\nusually have each day? (q16)"]
+	q17[label="How many drinks did\nyou have YESTERDAY? (q17)"]
 
-	q18[label="In the last 7 days,\non how many days did\nyou have any\nmarijuana or hashish?"]
-	q19[label="On each day that you\nused marijuana, how\nmany times per day\ndid you use enough\nto feel the effects?"]
-	q21[label="How many times YESTERDAY\ndid you use enough marijuana\nto feel the effects?"]
-	q22[label="How did you use\nmarijuana during the\nlast 7 days?"]
+	q18[label="In the last 7 days,\non how many days did\nyou have any\nmarijuana or hashish? (q18)"]
+	q19[label="On each day that you\nused marijuana, how\nmany times per day\ndid you use enough\nto feel the effects? (q19)"]
+	q21[label="How many times YESTERDAY\ndid you use enough marijuana\nto feel the effects? (q21)"]
+	q22[label="How did you use\nmarijuana during the\nlast 7 days? (q22)"]
 
-	q25[label="In the last 7 days,\nwhich of the following\ndrugs did you use?"]
-	q26[label="On how many of the past\n7 days, did you use\none or more of these drugs?"]
+	q25[label="In the last 7 days,\nwhich of the following\ndrugs did you use? (q25)"]
+	q26[label="On how many of the past\n7 days, did you use\none or more of these drugs? (q26)"]
 
-	q2[label="In the last 7 days,\nhave you taken any\nmedications prescribed\nby your doctor?"]
-	q23[label="In the past 7 days,\ndid you use any of\nyour prescription medications\nMORE OFTEN or at HIGHER DOSES\nthan your doctor prescribed?"]
-	q232[label="Why did you take more\nmedication than prescribed?"]
-	q24[label="Which prescription medications\ndid you take MORE OFTEN\nor at HIGHER DOSES\nthan prescribed?"]
+	q2[label="In the last 7 days,\nhave you taken any\nmedications prescribed\nby your doctor? (q2)"]
+	q23[label="In the past 7 days,\ndid you use any of\nyour prescription medications\nMORE OFTEN or at HIGHER DOSES\nthan your doctor prescribed? (q23)"]
+	q232[label="Why did you take more\nmedication than prescribed? (q232)"]
+	q24[label="Which prescription medications\ndid you take MORE OFTEN\nor at HIGHER DOSES\nthan prescribed? (q24)"]
+
+	End
 
 	//Edges (Routing Logic)
+	q1 -> q3[label="Yes"]
 
+	q3 -> q4[label="Cigarettes"]
+	q4 -> q5[label="Seven days"]
+	q4 -> q6[label="One to six days"]
+	q5 -> q7
+	q6 -> q7
+
+	q3 -> q8[label="e-cigarettes"]
+	q8 -> q9[label="One to seven days"]
+	q8 -> q10[label="Would rather not answer"]
+	q9 -> q10
+	q10 -> q11
+	q11 -> q12[label="Yes"]
+
+	q3 -> q13[label="Other tobacco products"]
+	q13 -> q14
+
+	q3 -> q15[label="Alcohol"]
+	q15 -> q16[label="One to seven days"]
+	q15 -> q17[label="Would rather not answer"]
+	q16 -> q17
+
+	q3 -> q18[label="Marijuana, including hashish"]
+	q18 -> q19
+	q19 -> q21
+	q21 -> q22
+
+	q3 -> q25[label="Other drugs"]
+	q25 -> q26
+
+	q1 -> q2[label="Else"]
+	q7 -> q2
+	q11 -> q2
+	q12 -> q2
+	q14 -> q2
+	q17 -> q2
+	q22 -> q2
+	q26 -> q2
+	q2 -> q23[label="Yes"]
+	q23 -> q232[label="Yes"]
+	q232 -> q24[label="To get a pleasurable effect or to get high OR\nTo get extra energy"]
+	q2 -> End[label="Else"]
+	q23 -> End[label="Else"]
+	q232 -> End[label="Else"]
+	q24 -> End[label="Else"]
 }
