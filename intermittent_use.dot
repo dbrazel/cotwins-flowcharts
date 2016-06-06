@@ -1,0 +1,28 @@
+digraph {
+	//Nodes (Questions)
+	HiddenCigarettes[label="Did participant use cigarettes\ntwo weeks ago but not\nlast week? (Automatically\ncompleted) (HiddenCigarettes)", shape=box]
+	HiddenEcigarettes[label="Did participant use e-cigarettes\ntwo weeks ago but not\nlast week? (Automatically\ncompleted) (HiddenEcigarettes)", shape=box]
+	HiddenAlcohol[label="Did participant use alcohol\ntwo weeks ago but not\nlast week? (Automatically\ncompleted) (HiddenAlcohol)", shape=box]
+	HiddenMarijuana[label="Did participant use marijuana\ntwo weeks ago but not\nlast week? (Automatically\ncompleted) (HiddenMarijuana)", shape=box]
+
+	q1[label="You reported that you did\nnot smoke any cigarettes\nlast week. Please tell us\nwhy. (q1)"]
+	q1a[label="Which other tobacco or nicotine\nproduct did you use? (q1a)"]
+
+	q2[label="You reported that you did\nnot use e-cigarettes\nlast week. Please tell us\nwhy. (q2)"]
+	q2a[label="Which other tobacco or nicotine\nproduct did you use? (q2a)"]
+
+	q3[label="You reported that you did\nnot drink alcohol\nlast week. Please tell us\nwhy. (q3)"]
+
+	q4[label="You reported that you did\nnot use marijuana\nlast week. Please tell us\nwhy. (q4)"]
+
+	//Edges (Routing Logic)
+	HiddenCigarettes -> q1[label="Yes"]
+	q1 -> q1a[label="I used a different tobacco\nor nicotine product"]
+
+	HiddenEcigarettes -> q2[label="Yes"]
+	q2 -> q2a[label="I used a different tobacco\nor nicotine product"]
+
+	HiddenAlcohol -> q3[label="Yes"]
+
+	HiddenMarijuana -> q4[label="Yes"]
+}
