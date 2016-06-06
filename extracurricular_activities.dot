@@ -1,0 +1,28 @@
+digraph {
+	//Nodes (Questions)
+	q1[label="In the past seven days,\nhow many hours did you\nwatch television or videos,\nincluding VHS, DVDs or\nmusic videos? (q1)"]
+	q2[label="In the past seven days,\nhow many times did you\nbicycle, skateboard, dance,\nhike, hunt, or do yard work? (q2)"]
+	q3[label="In the past seven days,\nhow many times did you\nroller blade, roller skate,\ndownhill ski, snowboard,\nplay racquet sports, or\ndo aerobics? (q3)"]
+	q4[label="In the past seven days,\nhow many times did you\nparticipate in strenuous team\nsports such as football,\nsoccer, basketball, lacrosse,\nrugby, field hockey, or ice hockey? (q4)"]
+	q5[label="In the past seven days,\nhow many times did you\nparticipate in individual\nsports such as running,\nwrestling, swimming, cross-country\nskiing, cycle racing, or martial arts? (q5)"]
+	q6[label="In the past seven days,\nhow many times did you\nparticipate in gymnastics,\nweight lifting, yoga, or\nstrength training? (q6)"]
+	q7[label="In the past seven days,\nhow many times did you\nplay golf, go fishing or\nbowling, or play softball\nor baseball? (q7)"]
+	q8[label="In the past seven days,\nhow many times did you\nwalk for exercise? (q8)"]
+	q9[label="In the past seven days,\nhow many hours did you\nspend playing video games,\ncomputer games, or games\non a mobile device? (q9)"]
+	q10[label="In the past month, about\nhow many hours did you\nspend on volunteer or\ncommunity service work? (q10)"]
+	q11[label="How often have you attended\nchurch, synagogue, temple,\nmosque, or other religious/spiritual\nservices in the past month? (q11)"]
+	q12[label="Many churches, synagogues,\nand other places of worship\nhave special activities outside\nof regular worship services--such\nas classes, retreats, small groups,\nor choir. In the past month,\nhow often have you taken\npart in such activities? (q12)"]
+
+	//Edges (Routing Logic)
+	q1 -> q2
+	q2 -> q3
+	q3 -> q4
+	q4 -> q5
+	q5 -> q6
+	q6 -> q7
+	q7 -> q8
+	q8 -> q9
+	q9 -> q10
+	q10 -> q11
+	q11 -> q12
+}
