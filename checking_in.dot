@@ -70,7 +70,7 @@ digraph {
 
 	q1 -> q2[label="Else"]
 	q7 -> q2
-	q11 -> q2
+	q11 -> q2[label="Else"]
 	q12 -> q2
 	q14 -> q2
 	q17 -> q2
