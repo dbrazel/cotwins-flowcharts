@@ -1,0 +1,67 @@
+digraph {
+	//Nodes (Questions)
+	Q1[label="Who are the adults\nyou live with? (Q1)"]
+
+	M1[label="My mother knows who\nI spend time with. (M1)"]
+	M2[label="My mother knows how\nI spend my money. (M2)"]
+	M3[label="My mother knows where\nI am most afternoons\nafter school. (M3)"]
+	M4[label="My mother knows where\nI go at night. (M4)"]
+	M5[label="My mother knows what I\ndo with my free time. (M5)"]
+
+	F1[label="My father knows who\nI spend time with. (F1)"]
+	F2[label="My father knows how\nI spend my money. (F2)"]
+	F3[label="My father knows where\nI am most afternoons\nafter school. (F3)"]
+	F4[label="My father knows where\nI go at night. (F4)"]
+	F5[label="My father knows what I\ndo with my free time. (F5)"]
+
+	SF1[label="My stepfather knows who\nI spend time with. (SF1)"]
+	SF2[label="My stepfather knows how\nI spend my money. (SF2)"]
+	SF3[label="My stepfather knows where\nI am most afternoons\nafter school. (SF3)"]
+	SF4[label="My stepfather knows where\nI go at night. (SF4)"]
+	SF5[label="My stepfather knows what I\ndo with my free time. (SF5)"]
+
+	SM1[label="My stepmother knows who\nI spend time with. (SM1)"]
+	SM2[label="My stepmother knows how\nI spend my money. (SM2)"]
+	SM3[label="My stepmother knows where\nI am most afternoons\nafter school. (SM3)"]
+	SM4[label="My stepmother knows where\nI go at night. (SM4)"]
+	SM5[label="My stepmother knows what I\ndo with my free time. (SM5)"]
+
+	O6[label="Please briefly describe who\nthis other adult is. (O6)"]
+	O1[label="The other adult I live with\nknows who I spend time with. (O1)"]
+	O2[label="The other adult I\nlive with knows how\nI spend my money. (O2)"]
+	O3[label="The other adult I\nlive with knows where\nI am most afternoons\nafter school. (O3)"]
+	O4[label="The other adult I\nlive with knows where\nI go at night. (O4)"]
+	O5[label="The other adult I\nlive with knows what I\ndo with my free time. (O5)"]
+
+	//Edges (Routing Logic)
+	Q1 -> M1[label="Mother"]
+	M1 -> M2
+	M2 -> M3
+	M3 -> M4
+	M4 -> M5
+
+	Q1 -> F1[label="Father"]
+	F1 -> F2
+	F2 -> F3
+	F3 -> F4
+	F4 -> F5
+
+	Q1 -> SF1[label="Stepfather"]
+	SF1 -> SF2
+	SF2 -> SF3
+	SF3 -> SF4
+	SF4 -> SF5
+
+	Q1 -> SM1[label="Stepmother"]
+	SM1 -> SM2
+	SM2 -> SM3
+	SM3 -> SM4
+	SM4 -> SM5
+
+	Q1 -> O6[label="Other adult"]
+	O6 -> O1
+	O1 -> O2
+	O2 -> O3
+	O3 -> O4
+	O4 -> O5
+}
