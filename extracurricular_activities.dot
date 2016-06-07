@@ -12,6 +12,7 @@ digraph {
 	q10[label="In the past month, about\nhow many hours did you\nspend on volunteer or\ncommunity service work? (q10)"]
 	q11[label="How often have you attended\nchurch, synagogue, temple,\nmosque, or other religious/spiritual\nservices in the past month? (q11)"]
 	q12[label="Many churches, synagogues,\nand other places of worship\nhave special activities outside\nof regular worship services--such\nas classes, retreats, small groups,\nor choir. In the past month,\nhow often have you taken\npart in such activities? (q12)"]
+	End
 
 	//Edges (Routing Logic)
 	q1 -> q2
@@ -25,4 +26,5 @@ digraph {
 	q9 -> q10
 	q10 -> q11
 	q11 -> q12
+	q12 -> End
 }
