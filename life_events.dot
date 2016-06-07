@@ -1,0 +1,16 @@
+digraph {
+	//Nodes (Questions)
+	Hidden1[label="What is your sex? (Automatically\ncompleted) (Hidden1)"]
+
+	Q2[label="In the past two months have any\nof the following things happened\nin your life? (Q2)"]
+	Q2a[label="You said a close relative died\nin the past 2 months. We are\nvery sorry to hear that.\nWho was it? (Q2a)"]
+	Q3Male[label="In the past two months, have any of\nthe following happened? (Q3Male)"]
+	Q3Female[label="In the past two months, have any\nof the following things happened?\n(Q3Female)"]
+
+	//Edges (Routing Logic)
+	Q2 -> Q2a[label="A close relative died"]
+	Q2 -> Hidden1
+	Q2a -> Hidden1
+	Hidden1 -> Q3Male[label="Male"]
+	Hidden1 -> Q3Female[label="Female"]	
+}
