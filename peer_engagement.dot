@@ -1,0 +1,12 @@
+digraph {
+	//Nodes (Questions)
+	q1[label="All things considered, how\nsatisfied have you been with\nyour group of friends? (q1)"]
+	q2[label="How much have your friends\ninfluenced what you've\nthought and done? (q2)"]
+	q3[label="How much stress or pressure\nhas there been in your relationship\nwith your friends? (q3)"]
+	q4[label="How much support and\nencouragement have you received\nfrom your friends? (q4)"]
+
+	//Edges (Routing Logic)
+	q1 -> q2
+	q2 -> q3
+	q3 -> q4
+}
