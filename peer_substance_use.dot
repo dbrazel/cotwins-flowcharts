@@ -1,0 +1,30 @@
+digraph {
+	//Nodes (Questions)
+	Q1[label="Thinking only about the past month,\nhow many of your friends used\ncigarettes, e-cigarettes, or other\ntobacco products (like snuff, dip,\nhookahs, and so on)? (Q1)"]
+	Q2[label="Thinking only about the past month,\nhow many of your friends\nused alcohol? (Q2)"]
+	Q3[label="Thinking only about the past month,\nhow many of your friends\nused marijuana? (Q3)"]
+	Q4[label="Thinking only about the past month,\nhow many of your friends\nused other drugs? (Q4)"]
+	Q5[label="Of your friends who smoke cigarettes,\ne-cigarettes, or use tobacco,\nhow many of them did it around\nyou one or more times this\npast week? (Q5)"]
+	Q6[label="Of your friends who drink alcohol,\nhow many of them did it around\nyou one or more times this\npast week? (Q6)"]
+	Q7[label="Of your friends who use marijuana or\nhashish, how many of them did\nit around you one or more\ntimes this past week? (Q7)"]
+	Q8[label="Of your friends who use other drugs,\nhow many of them did it\naround you one or more times\nthis past week? (Q8)"]
+	End
+
+	//Edges (Routing Logic)
+	Q1 -> Q2[label="Else"]
+	Q1 -> Q5[label="Most/All OR Some"]
+	Q5 -> Q2
+
+	Q2 -> Q3[label="Else"]
+	Q2 -> Q6[label="Most/All OR Some"]
+	Q6 -> Q3
+
+	Q3 -> Q4[label="Else"]
+	Q3 -> Q7[label="Most/All OR Some"]
+	Q7 -> Q4
+
+	Q4 -> End [label="Else"]
+	Q4 -> Q8[label="Most/All OR Some"]
+	Q8 -> End
+
+}
