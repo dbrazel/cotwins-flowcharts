@@ -1,0 +1,61 @@
+digraph {
+	//Nodes (Questions)
+	H1[label="Was the last Weekly Check-In\nthe first time the participant \nused cigarettes?\n(Automatically completed) (H1)", shape=box]
+	H2[label="Was the last Weekly Check-In\nthe first time the participant \nused e-cigarettes?\n(Automatically completed) (H2)", shape=box]
+	H3[label="Was the last Weekly Check-In\nthe first time the participant \nused other tobacco products?\n(Automatically completed) (H3)", shape=box]
+	H4[label="Was the last Weekly Check-In\nthe first time the participant \nused alcohol?\n(Automatically completed) (H4)", shape=box]
+	H5[label="Was the last Weekly Check-In\nthe first time the participant \nused marijuana?\n(Automatically completed) (H5)", shape=box]
+
+	q1[label="When you smoked cigarettes\nthis week, did it make\nyou feel sociable? (q1)"]
+	q2[label="When you smoked cigarettes\nthis week, did it make you feel\nrelaxed, mellow or peaceful? (q2)"]
+	q3[label="When you smoked cigarettes\nthis week, did it make you\nfeel very good or 'on top\nof the world'? (q3)"]
+	q4[label="When you smoked cigarettes\nthis week, did it make\nyou feel drowsy? (q4)"]
+	q5[label="When you smoked cigarettes\nthis week, did it make\nyou feel dizzy? (q5)"]
+	q6[label="When you smoked cigarettes\nthis week, did it make\nyou feel nauseous? (q6)"]
+
+	q7[label="When you smoked e-cigarettes\nthis week, did it make\nyou feel sociable? (q7)"]
+	q8[label="When you smoked e-cigarettes\nthis week, did it make you feel\nrelaxed, mellow or peaceful? (q8)"]
+	q9[label="When you smoked e-cigarettes\nthis week, did it make you\nfeel very good or 'on top\nof the world'? (q9)"]
+	q10[label="When you smoked e-cigarettes\nthis week, did it make\nyou feel drowsy? (q10)"]
+	q11[label="When you smoked e-cigarettes\nthis week, did it make\nyou feel dizzy? (q11)"]
+	q12[label="When you smoked e-cigarettes\nthis week, did it make\nyou feel nauseous? (q12)"]
+
+	q13[label="When you used this tobacco product\nthis week, did it make\nyou feel sociable? (q13)"]
+	q14[label="When you used this tobacco product\nthis week, did it make you feel\nrelaxed, mellow or peaceful? (q14)"]
+	q15[label="When you used this tobacco product\nthis week, did it make you\nfeel very good or 'on top\nof the world'? (q15)"]
+	q16[label="When you used this tobacco product\nthis week, did it make\nyou feel drowsy? (q16)"]
+	q17[label="When you used this tobacco product\nthis week, did it make\nyou feel dizzy? (q17)"]
+	q18[label="When you used this tobacco product\nthis week, did it make\nyou feel nauseous? (q18)"]
+
+	q19[label="When you used alcohol\nthis week, did it make\nyou feel sociable? (q19)"]
+	q20[label="When you used alcohol\nthis week, did it make you feel\nrelaxed, mellow or peaceful? (q20)"]
+	q21[label="When you used alcohol\nthis week, did it make you\nfeel very good or 'on top\nof the world'? (q21)"]
+	q22[label="When you used alcohol\nthis week, did it make\nyou feel drowsy? (q22)"]
+	q23[label="When you used alcohol\nthis week, did it make\nyou feel dizzy? (q23)"]
+	q24[label="When you used alcohol\nthis week, did it make\nyou feel nauseous? (q24)"]
+
+	q25[label="When you used marijuana\nthis week, did it make\nyou feel sociable? (q25)"]
+	q26[label="When you used marijuana\nthis week, did it make you feel\nrelaxed, mellow or peaceful? (q26)"]
+	q27[label="When you used marijuana\nthis week, did it make you\nfeel very good or 'on top\nof the world'? (q27)"]
+	q28[label="When you used marijuana\nthis week, did it make\nyou feel drowsy? (q28)"]
+	q29[label="When you used marijuana\nthis week, did it make\nyou feel dizzy? (q29)"]
+	q30[label="When you used marijuana\nthis week, did it make\nyou feel nauseous? (q30)"]
+
+	End[label="End if no other path is pending"]
+
+	//Edges (Routing Logic)
+	H1 -> q1[label="Yes"]
+	q1 -> q2 -> q3 -> q4 -> q5 -> q6 -> End
+
+	H2 -> q7[label="Yes"]
+	q7 -> q8 -> q9 -> q10 -> q11 -> q12 -> End
+
+	H3 -> q13[label="Yes"]
+	q13 -> q14 -> q15 -> q16 -> q17 -> q18 -> End
+
+	H4 -> q19[label="Yes"]
+	q19 -> q20 -> q21 -> q22 -> q23 -> q24 -> End
+
+	H5 -> q25[label="Yes"]
+	q25 -> q26 -> q27 -> q28 -> q29 -> q30 -> End
+}
