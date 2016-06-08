@@ -26,5 +26,4 @@ digraph {
 	Q4 -> End [label="Else"]
 	Q4 -> Q8[label="Most/All OR Some"]
 	Q8 -> End
-
 }

@@ -15,10 +15,10 @@ digraph {
 
 	q4[label="You reported that you did\nnot use marijuana\nlast week. Please tell us\nwhy. (q4)"]
 
-	End1[label="End"]
-	End2[label="End"]
-	End3[label="End"]
-	End4[label="End"]
+	End1[label="End if no other path is pending"]
+	End2[label="End if no other path is pending"]
+	End3[label="End if no other path is pending"]
+	End4[label="End if no other path is pending"]
 
 	//Edges (Routing Logic)
 	HiddenCigarettes -> q1[label="Yes"]
