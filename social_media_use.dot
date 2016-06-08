@@ -1,0 +1,39 @@
+digraph {
+	//Nodes (Questions)
+	A1[label="Do you have a Facebook\naccount? (A1)"]
+	q1[label="Go to your Facebook page.\nHow many Facebook friends\ndo you have? (q1)"]
+	q2[label="Go to your co-twin's\nFacebook page. How many\nMUTUAL FRIENDS do you have? (q2)"]
+
+	q3[label="What is your sex? (q3)"]
+
+	q4[label="Do you use any of these\nsocial media sites or platforms?\nSelect all that apply. (q4)"]
+
+	q21[label="When you use Facebook,\nplease tell us who you talk\nto, and how frequently (q21)"]
+	q22[label="When you use Facebook Messenger,\nplease tell us who you talk\nto, and how frequently (q22)"]
+	q23[label="When you use Twitter,\nplease tell us who you talk\nto, and how frequently? (q23)"]
+	q24[label="When you use Twitter DM,\nplease tell us who you talk\nto, and how frequently? (q24)"]
+	q25[label="When you use Snapchat,\nplease tell us who you talk\nto, and how frequently? (q25)"]
+	q26[label="When you use Instagram,\nplease tell us who you talk\nto, and how frequently? (q26)"]
+	q27[label="When you use Tumblr,\nplease tell us who you talk\nto, and how frequently? (q27)"]
+	q28[label="When you use Kik,\nplease tell us who you talk\nto, and how frequently? (q28)"]
+	q29[label="When you use Whisper,\nplease tell us who you talk\nto, and how frequently? (q29)"]
+	q210[label="When you use YikYak,\nplease tell us who you talk\nto, and how frequently? (q210)"]
+
+	//Edges (Routing Logic)
+	A1 -> q1[label="Yes"]
+	A1 -> q3[label="No"]
+	q1 -> q2
+	q2 -> q3
+	q3 -> q4
+
+	q4 -> q21[label="Facebook"]
+	q4 -> q22[label="Facebook Messenger"]
+	q4 -> q23[label="Twitter"]
+	q4 -> q24[label="Twitter DM"]
+	q4 -> q25[label="Snapchat"]
+	q4 -> q26[label="Instagram"]
+	q4 -> q27[label="Tumblr"]
+	q4 -> q28[label="Kik"]
+	q4 -> q29[label="Whisper"]
+	q4 -> q210[label="YikYak"]
+}
